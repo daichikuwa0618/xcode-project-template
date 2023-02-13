@@ -1,0 +1,65 @@
+# Included / Excluded files
+
+included:
+  - ProjectTemplate
+  - App
+
+# Enable / Disable rules
+
+disabled_rules:
+  - trailing_comma
+
+opt_in_rules:
+  - attributes
+  - closure_end_indentation
+  - closure_spacing
+  - contains_over_filter_count
+  - convenience_type
+  - empty_collection_literal
+  - empty_count
+  - empty_string
+  - fallthrough
+  - fatal_error_message
+  - first_where
+  - force_unwrapping
+  - function_default_parameter_at_end
+  - implicit_return
+  - implicitly_unwrapped_optional
+  - last_where
+  - multiline_parameters
+  - operator_usage_whitespace
+  - overridden_super_call
+  - pattern_matching_keywords
+  - shorthand_optional_binding
+  - sorted_first_last
+  - trailing_closure
+  - unneeded_parentheses_in_closure_argument
+  - unowned_variable_capture
+  - unused_capture_list
+  - vertical_parameter_alignment_on_call
+
+# Configure rules
+
+function_parameter_count:
+  warning: 7
+  error: 10
+
+file_length:
+  ignore_comment_only_lines: true
+
+identifier_name:
+  excluded:
+    - x
+    - y
+    - i
+    - id
+    - on
+    - to
+    - us
+    - at
+    - ok
+    - ci
+
+type_name:
+  excluded:
+    - ID

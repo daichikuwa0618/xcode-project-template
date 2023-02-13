@@ -84,6 +84,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C9DEB00A299A201900B2FCA0 /* Build configuration list for PBXNativeTarget "Production" */;
 			buildPhases = (
+				C9DEB03C299A2BA900B2FCA0 /* Run SwiftFormat */,
+				C9DEB03E299A2BFC00B2FCA0 /* Run SwiftLint */,
 				C9DEAFF8299A201900B2FCA0 /* Sources */,
 				C9DEAFF9299A201900B2FCA0 /* Frameworks */,
 				C9DEAFFA299A201900B2FCA0 /* Resources */,
@@ -144,6 +146,46 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C9DEB03C299A2BA900B2FCA0 /* Run SwiftFormat */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run SwiftFormat";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# swift package update # Uncomment this line temporarily to update the version used to the latest matching your build-tools/Package.swift file\nxcrun --sdk macosx\\\n  swift build -c release\\\n  --package-path ../BuildTools --product swiftformat\n\nxcrun --sdk macosx\\\n  ../BuildTools/.build/release/swiftformat\\\n  ../ProjectTemplate,\"$SRCROOT\" --config ../swiftformat.config\n";
+		};
+		C9DEB03E299A2BFC00B2FCA0 /* Run SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run SwiftLint";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# swift package update # Uncomment this line temporarily to update the version used to the latest matching your build-tools/Package.swift file\nxcrun --sdk macosx\\\n  swift build -c release\\\n  --package-path ../BuildTools --product swiftlint\n\nxcrun --sdk macosx\\\n  ../BuildTools/.build/release/swiftlint\\\n  --config ../swiftlint.yml\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C9DEAFF8299A201900B2FCA0 /* Sources */ = {
