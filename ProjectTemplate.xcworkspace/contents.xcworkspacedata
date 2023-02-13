@@ -8,6 +8,9 @@
       location = "group:App/Staging.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:BuildTools">
+   </FileRef>
+   <FileRef
       location = "group:ProjectTemplate">
    </FileRef>
 </Workspace>
