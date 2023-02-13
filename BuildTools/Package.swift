@@ -7,8 +7,9 @@ let package = Package(
     name: "BuildTools",
     platforms: [.macOS(.v11)],
     dependencies: [
-        // Dependencies declare other packages that this package depends on.
-        // .package(url: /* package url */, from: "1.0.0"),
+        .package(url: "https://github.com/nicklockwood/SwiftFormat", from: "0.50.8"),
+        // FIXME: Fix the commit hash due to problem: [Unable to use SwiftLint as Swift Package Manager dependency · Issue #4746 · realm/SwiftLint](https://github.com/realm/SwiftLint/issues/4746)
+        .package(url: "https://github.com/realm/SwiftLint", revision: "b9e5cfb2027bb94a0bdcafe5d757827a236d0f1b"),
     ],
     targets: []
 )
